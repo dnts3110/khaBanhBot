@@ -23,11 +23,11 @@ async def on_message(message):
 
     if message.channel.name == 'generals': #allow to respond only in the general channel in the server
         if user_message.lower() == 'hello':
-            await message.channel.send(f'Hello {username}!')
+            await message.channel.send(f" chào {username}!")
             return
         elif user_message.lower() == 'ai la nguoi dut nhat trong nay?' or user_message.lower() == 'ai là người đụt nhất trong này?' :
-            randomNo = random.randrange()
-            await message.channel.send(f'Chac chan la {username}')
+
+            await message.channel.send(f' Chắc chắn là {username}')
             return
         elif user_message.lower() == 'xin so danh de anh banh oi' or user_message.lower() == 'xin số đánh đề anh bảnh ơi' or user_message.lower() == 'xin so danh de banh oi' or user_message.lower() == 'xin số đánh đề bảnh ơi':
             response = f'Em zai tin anh danh con de nay di {random.randint(10,99)}'
@@ -43,8 +43,22 @@ async def on_message(message):
             await message.channel.send(f'Khong co gi nhe em zai {username}!')
             return
 
+    strings = user_message.lower()
+    words = ['dm', 'dmm', 'dit me', 'dit me may', 'đm', 'đmm', 'địt mẹ', 'địt mẹ mày', 'banh', 'bảnh']
+    stringlist = strings.split()
+    word1, word2, word3, word4, word5, word6, word7, word8, word9, word10 = words
+    #if (word1 in stringlist and word3 in stringlist) or (word2 in stringlist and word3 in stringlist):
+    if (word1 in stringlist or word2 in stringlist or word3 in stringlist or word4 in stringlist or word5 in stringlist or word6 in stringlist or word7 in stringlist or word8 in stringlist) and (word9 in stringlist or word10 in stringlist) :
+        print(True)
+        return
+    else:
+        print(False)
+        return
+
     if user_message.lower() == '!anywhere':
         await message.channel.send('This can be use everywhere')
+
+
 
 
 
