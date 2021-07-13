@@ -41,8 +41,8 @@ async def on_message(message):
         elif user_message.lower() == 'cam on banh' or user_message.lower() == 'cảm ơn bảnh':
             await message.channel.send(f'Không có gì nhé em zai {username}!')
             return
-        elif user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh':
-            await message.channel.send(file=discord.File('dance1.gif'))
+        elif user_message.lower() == "nau an di banh" or user_message.lower() == 'nấu ăn đi bảnh':
+            await message.channel.send(file=discord.File('cook.gif'))
             return
 
 
@@ -77,8 +77,12 @@ async def on_message(message):
         print(False)
         return
 
-    if user_message.lower() == '!anywhere':
-        await message.channel.send('This can be use everywhere')
+    dances = ['dance1.gif', 'dance2.gif', 'dance3.gif', 'dance4.gif']
+    randomNo = random.randrange(0, len(dances))
+    if user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh':
+        await message.channel.send(file=discord.File(dances[randomNo]))
+        randomNo = random.randrange(0, len(dances))
+        return
 
 
 client.run(TOKEN)
