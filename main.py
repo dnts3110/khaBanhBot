@@ -23,7 +23,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.channel.name == 'generals':  # allow to respond only in the general channel in the server
+    if message.channel.name != 'gener':  # allow to respond only in the general channel in the server
         if user_message.lower() == 'hello':
             await message.channel.send( f" Anh Bảnh chào em Zai {username}!")
             return
@@ -41,6 +41,10 @@ async def on_message(message):
         elif user_message.lower() == 'cam on banh' or user_message.lower() == 'cảm ơn bảnh':
             await message.channel.send(f'Không có gì nhé em zai {username}!')
             return
+        elif user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh':
+            await message.channel.send(file=discord.File('dance1.gif'))
+            return
+
 
     chuibay = ["Xoắn ai chứ đừng xoắn tao. Đã là chó ngao thì đừng quá tự cao :’)",
                "Bố mày ỉa vào mồm mày bây giờ dcmm", "Mặt thì mụn mà tưởng là kim cương, Chân thì đầy ghẻ mà tưởng là "
