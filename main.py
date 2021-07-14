@@ -79,27 +79,27 @@ async def on_message(message):
         return
 
     dances = 5
-    dieuNhay = random.randrange(1, len(dances))
+    dieuNhay = random.randrange(1, dances)
     if user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh' or user_message.lower() == 'múa đi bảnh' or user_message.lower() == 'mua di banh':
         if(dieuNhay == 1) :
             await message.channel.send(file=discord.File('dance1.gif'))
-            dieuNhay = random.randrange(1, len(dances))
+            dieuNhay = random.randrange(1, dances)
             return
         if(dieuNhay == 2) :
             await message.channel.send(file=discord.File('dance2.gif'))
-            dieuNhay = random.randrange(1, len(dances))
+            dieuNhay = random.randrange(1, dances)
             return
         if(dieuNhay == 3) :
             await message.channel.send(file=discord.File('dance3.gif'))
-            dieuNhay = random.randrange(1, len(dances))
+            dieuNhay = random.randrange(1, dances)
             return
         if(dieuNhay == 4) :
             await message.channel.send(file=discord.File('dance4.gif'))
-            dieuNhay = random.randrange(1, len(dances))
+            dieuNhay = random.randrange(1, dances)
             return
         if (dieuNhay == 5):
             await message.channel.send(f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi địt cả lò mày bố mày quạu vlz, tự nhảy con mẹ mày đi thằng đụt. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
-            dieuNhay = random.randrange(1, len(dances))
+            dieuNhay = random.randrange(1, dances)
             return
 
 
