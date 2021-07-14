@@ -25,7 +25,7 @@ async def on_message(message):
 
     if message.channel.name != 'gener':  # allow to respond only in the general channel in the server
         if user_message.lower() == 'hello':
-            await message.channel.send( f" Anh Bảnh chào em Zai {username}!")
+            await message.channel.send(f" Anh Bảnh chào em Zai {username}!")
             return
         elif user_message.lower() == 'ai la nguoi dut nhat trong nay?' or user_message.lower() == 'ai là người đụt nhất trong này?':
 
@@ -45,8 +45,6 @@ async def on_message(message):
             await message.channel.send(file=discord.File('cook.gif'))
             return
 
-
-
     chuibay = ["Xoắn ai chứ đừng xoắn tao. Đã là chó ngao thì đừng quá tự cao :’)",
                "Bố mày ỉa vào mồm mày bây giờ dcmm", "Mặt thì mụn mà tưởng là kim cương, Chân thì đầy ghẻ mà tưởng là "
                                                      "hột xoàn, Coi lại bản thân mình đi nha em zai",
@@ -63,7 +61,8 @@ async def on_message(message):
                f"Nhìn {username} cũng giống búp bê đó. \n Nhưng búp bê hình như không não mà chỉ toàn nhựa. \n Mà nhựa cuối cùng cũng chỉ ra bãi đồng nát mà thôi."]
     randNum = random.randrange(0, len(chuibay))
     strings = user_message.lower()
-    words = ['dcm', 'đcm', 'con','dm', 'dmm', 'dit', 'me', 'ma', 'du', 'đm', 'đmm', 'địt', 'mẹ', 'má', 'đụ', 'banh', 'bảnh']
+    words = ['dcm', 'đcm', 'con', 'dm', 'dmm', 'dit', 'me', 'ma', 'du', 'đm', 'đmm', 'địt', 'mẹ', 'má', 'đụ', 'banh',
+             'bảnh']
     stringlist = strings.split()
     word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16, word17 = words
     # if (word1 in stringlist and word3 in stringlist) or (word2 in stringlist and word3 in stringlist):
@@ -72,34 +71,32 @@ async def on_message(message):
             word16 in stringlist or word17 in stringlist):
         print(True)
         await message.channel.send((chuibay[randNum]))
-        randNum = random.randrange(0, len(chuibay)) #make the number random again
-        return
-    else:
-        print(False)
+        randNum = random.randrange(0, len(chuibay))  # make the number random again
         return
 
-    dances = 5
-    dieuNhay = random.randrange(1, dances)
+    dieunhay = random.randrange(1, 5)
     if user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh' or user_message.lower() == 'múa đi bảnh' or user_message.lower() == 'mua di banh':
-        if(dieuNhay == 1) :
+        print('true nhay')
+        if dieunhay == 1:
             await message.channel.send(file=discord.File('dance1.gif'))
-            dieuNhay = random.randrange(1, dances)
+            dieunhay = random.randrange(1, 5)
             return
-        if(dieuNhay == 2) :
+        if dieunhay == 2:
             await message.channel.send(file=discord.File('dance2.gif'))
-            dieuNhay = random.randrange(1, dances)
+            dieunhay = random.randrange(1, 5)
             return
-        if(dieuNhay == 3) :
+        if dieunhay == 3:
             await message.channel.send(file=discord.File('dance3.gif'))
-            dieuNhay = random.randrange(1, dances)
+            dieunhay = random.randrange(1, 5)
             return
-        if(dieuNhay == 4) :
+        if dieunhay == 4:
             await message.channel.send(file=discord.File('dance4.gif'))
-            dieuNhay = random.randrange(1, dances)
+            dieunhay = random.randrange(1, 5)
             return
-        if (dieuNhay == 5):
-            await message.channel.send(f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi địt cả lò mày bố mày quạu vlz, tự nhảy con mẹ mày đi thằng đụt. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
-            dieuNhay = random.randrange(1, dances)
+        if dieunhay == 5:
+            await message.channel.send(
+                f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi địt cả lò mày bố mày quạu vlz, tự nhảy con mẹ mày đi thằng đụt. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
+            dieunhay = random.randrange(1, 5)
             return
 
 
