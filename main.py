@@ -44,9 +44,7 @@ async def on_message(message):
         elif user_message.lower() == "nau an di banh" or user_message.lower() == 'nấu ăn đi bảnh':
             await message.channel.send(file=discord.File('cook.gif'))
             return
-        elif user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh':
-            await message.channel.send(file=discord.File('dance1.gif'))
-            return
+
 
 
     chuibay = ["Xoắn ai chứ đừng xoắn tao. Đã là chó ngao thì đừng quá tự cao :’)",
@@ -80,12 +78,25 @@ async def on_message(message):
         print(False)
         return
 
-    #dances = ['dance1.gif', 'dance2.gif', 'dance3.gif', 'dance4.gif']
-   # randomNo = random.randrange(0, len(dances))
-   # if user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh':
-   #     await message.channel.send(file=discord.File(dances[randomNo]))
-   #     randomNo = random.randrange(0, len(dances))
-   #     return
+    dances = 4
+    dieuNhay = random.randrange(1, len(dances))
+    if user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh' or user_message.lower() == 'múa đi bảnh' or user_message.lower() == 'mua di banh':
+        if(random == 1) :
+            await message.channel.send(file=discord.File('dance1.gif'))
+            randomNo = random.randrange(1, len(dances))
+            return
+        if(random == 2) :
+            await message.channel.send(file=discord.File('dance2.gif'))
+            randomNo = random.randrange(1, len(dances))
+            return
+        if(random == 3) :
+            await message.channel.send(file=discord.File('dance3.gif'))
+            randomNo = random.randrange(1, len(dances))
+            return
+        if(random == 4) :
+            await message.channel.send(file=discord.File('dance4.gif'))
+            randomNo = random.randrange(1, len(dances))
+            return
 
 
 client.run(TOKEN)
