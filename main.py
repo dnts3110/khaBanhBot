@@ -74,29 +74,29 @@ async def on_message(message):
         randNum = random.randrange(0, len(chuibay))  # make the number random again
         return
 
-    dieunhay = random.randrange(1, 5)
+    dieunhay = random.randrange(1, 6)
     if user_message.lower() == "nhay di banh" or user_message.lower() == 'nhảy đi bảnh' or user_message.lower() == 'múa đi bảnh' or user_message.lower() == 'mua di banh':
         print('true nhay')
         if dieunhay == 1:
             await message.channel.send(file=discord.File('dance1.gif'))
-            dieunhay = random.randrange(1, 5)
+            dieunhay = random.randrange(1, 6)
             return
         if dieunhay == 2:
             await message.channel.send(file=discord.File('dance2.gif'))
-            dieunhay = random.randrange(1, 5)
+            dieunhay = random.randrange(1, 6)
             return
         if dieunhay == 3:
             await message.channel.send(file=discord.File('dance3.gif'))
-            dieunhay = random.randrange(1, 5)
+            dieunhay = random.randrange(1, 6)
             return
         if dieunhay == 4:
             await message.channel.send(file=discord.File('dance4.gif'))
-            dieunhay = random.randrange(1, 5)
+            dieunhay = random.randrange(1, 6)
             return
         if dieunhay == 5:
             await message.channel.send(
-                f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi địt cả lò mày bố mày quạu vlz, tự nhảy con mẹ mày đi thằng đụt. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
-            dieunhay = random.randrange(1, 5)
+                f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
+            dieunhay = random.randrange(1, 6)
             return
 
 
