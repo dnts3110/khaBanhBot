@@ -113,11 +113,10 @@ async def on_message(message):
             if user_message.lower() == "la" or user_message.lower() == 'lá':
                 await message.channel.send("Kéo \n tao thắng")
                 return
-            playOanTuTi = random.randrange(1, 3)
         if playOanTuTi == 2:
             await message.channel.send("Chơi cái đầu buồi 3===>")
-            playOanTuTi = random.randrange(1, 3)
             return
+        playOanTuTi = random.randrange(1, 3)
 
 
 
