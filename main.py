@@ -1,5 +1,6 @@
 import discord
 import random
+import asyncio
 
 TOKEN = 'ODYzMDAxMzU2NzYzNzkxMzgw.YOgipQ.r6lzgVupo60bZwapN7hUV1cQ-BQ'
 
@@ -14,7 +15,7 @@ async def on_ready():
 # the input is every msg in the server
 # func to react/respond to every msg in the server
 @client.event
-async def on_message(message, acceptPlay=0):
+async def on_message(message):
     username = str(message.author).split('#')[0]
     user_message = str(message.content)
     channel = str(message.channel.name)
@@ -105,32 +106,52 @@ async def on_message(message, acceptPlay=0):
             return
 
 
-    playOanTuTi = random.randrange(1, 3)
-    if user_message.lower() == "oan tu ti k" or user_message.lower() == 'oẳn tù tì k' or user_message.lower() == "oan tu ti k banh" or user_message.lower() == 'oẳn tù tì k bảnh' or user_message.lower() == "oan tu ti ko banh" or user_message.lower() == 'oẳn tù tì ko bảnh' or user_message.lower() == "oan tu ti khong banh" or user_message.lower() == 'oẳn tù tì không bảnh':
-        if playOanTuTi == 1:
-            await message.channel.send(
-                f"Chơi luôn em {username} \n Được rồi anh sẽ chơi tập trung hết sức \n Ra đấm, kéo, lá nhé \n Em ra trước đi")
-            acceptPlay = 1
-            return
-        if playOanTuTi == 2:
-            await message.channel.send("Chơi cái đầu buồi 3===>")
-            acceptPlay = 0
-            return
-        playOanTuTi = random.randrange(1, 3)
+#   if user_message.lower() == "oan tu ti k" or user_message.lower() == 'oẳn tù tì k' or user_message.lower() == "oan tu ti k banh" or user_message.lower() == 'oẳn tù tì k bảnh' or user_message.lower() == "oan tu ti ko banh" or user_message.lower() == 'oẳn tù tì ko bảnh' or user_message.lower() == "oan tu ti khong banh" or user_message.lower() == 'oẳn tù tì không bảnh':
+#       playOanTuTi = random.randrange(1, 3)
+#       if playOanTuTi == 1:
+#           await message.channel.send(
+#               f"Chơi luôn em {username} \n Được rồi anh sẽ chơi tập trung hết sức \n Ra đấm, kéo, lá nhé \n Em ra trước đi")
+#           if user_message.lower() == "dam" or user_message.lower() == 'đấm':
+#               await message.channel.send("Lá \n tao thắng")
+#               return
+#           if user_message.lower() == "keo" or user_message.lower() == 'kéo':
+#               await message.channel.send("Đấm \n tao thắng")
+#               return
+#           if user_message.lower() == "la" or user_message.lower() == 'lá':
+#               await message.channel.send("Kéo \n tao thắng")
+#               return
 
-    if acceptPlay == 1:
-        if user_message.lower() == "dam" or user_message.lower() == 'đấm':
-            await message.channel.send("Lá \n tao thắng")
-            acceptPlay = 0
-            return
-        if user_message.lower() == "keo" or user_message.lower() == 'kéo':
-            await message.channel.send("Đấm \n tao thắng")
-            acceptPlay = 0
-            return
-        if user_message.lower() == "la" or user_message.lower() == 'lá':
-            await message.channel.send("Kéo \n tao thắng")
-            acceptPlay = 0
-            return
+#       if playOanTuTi == 2:
+#           await message.channel.send("Chơi cái đầu buồi 3===>")
+#           return
+        if user_message.lower() == "oan tu ti k":
+            play_oan_tu_ti = random.randint(1, 2)
+            print("in1")
+            if play_oan_tu_ti == 1:
+                await channel.send('choi, đấm kéo lá')
+
+                def ra_dam_bua_la(msg):
+                    return (
+                                   msg.content.lower() == 'dam' or msg.content.lower() == "đấm" or msg.content.lower() == 'la' or msg.content.lower() == "lá" or msg.content.lower() == 'kéo' or msg.content.lower() == "keo") and msg.channel == channel and msg.author == message.author
+
+                try:
+                    m = await client.wait_for('message', check=ra_dam_bua_la, timeout=5.0)
+                except asyncio.TimeoutError:
+                    return await message.channel.send(
+                        'Địt mẹ mày rủ chơi xong đéo thấy đâu? đ hiểu, không chơi nữa cmm')
+
+                if m.content.lower() == "dam" or m.content.lower() == 'đấm':
+                    await message.channel.send("Lá \n tao thắng")
+                    return
+                if m.content.lower() == "keo" or m.content.lower() == 'kéo':
+                    await message.channel.send("Đấm \n tao thắng")
+                    return
+                if m.content.lower() == "la" or m.content.lower() == 'lá':
+                    await message.channel.send("Kéo \n tao thắng")
+                    return
+
+            if play_oan_tu_ti == 2:
+                await channel.send('khong choi')
 
 
 client.run(TOKEN)
