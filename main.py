@@ -158,5 +158,18 @@ async def on_message(message):
             dieunhay = random.randrange(1, 6)
             return
 
+    if message.content.startswith('bố thí bảnh') or message.content.startswith('bo thi banh'):
+        channel = message.channel
+        await channel.send(f'Gửi anh ít tiền  \N{Money with Wings} nha em zai {username}, anh đang cần gấp lắm')
+
+        def check(reaction, user):
+            return user == message.author and str(reaction.emoji) == '\N{Money with Wings}'
+
+        try:
+            reaction, user = await client.wait_for('reaction_add', timeout=34.0, check=check)
+        except asyncio.TimeoutError:
+            await channel.send(f'Dcmm {username}, có dăm ba đồng bạc lẻ em zai cũng tiếc, cũng tính toán lâu vcloz \N{Smirking Face}')
+        else:
+            await channel.send(f'Được vãi l em zai ơi, uy tín đấy {username} ')
 
 client.run(TOKEN)
