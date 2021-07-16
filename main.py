@@ -59,7 +59,7 @@ async def on_message(message):
                "Bố mẹ dạy mày để cứt vào mồm à? Sao toàn sủa ra cứt thế hả thằng chó", "Em zai đợi bố mày ra tù đi <3",
                "Tao là bố mày đấy, dcmm", "Mày ăn cơm hay ăn cứt mà ngu thế?",
                "Tạo hoá thật keo kiệt với bộ não của em zai ;)", "Khổ thân em zai, sinh ra đã đéo có não :(",
-               f"Nhìn {username} cũng giống búp bê đó. \n Nhưng búp bê hình như không não mà chỉ toàn nhựa. \n Mà nhựa cuối cùng cũng chỉ ra bãi đồng nát mà thôi.", f"Dạ em xin lỗi {username} ạ, em còn trẻ người non dạ mong {username} thông cảm ạ", f"Người ta bảo nghĩ gì thì uốn lưỡi 7 lần trước khi nói, riêng mày, {username}, lưỡi chó nói đéo khác sủa gâu gâu", f"Tổ sư bố thằng {username}, mịe mày lễ phép mày đâu? Dcmm thằng ăn bốc đái ngồi", f"Này, chửi cái đéo gì?? Mày có quyền gì chửi tao, giỏi thì oẳn tù tì thắng tao đi ;). \n Đấm, kéo, lá. Mày ra trước"]
+               f"Nhìn {username} cũng giống búp bê đó. \n Nhưng búp bê hình như không não mà chỉ toàn nhựa. \n Mà nhựa cuối cùng cũng chỉ ra bãi đồng nát mà thôi.", f"Dạ em xin lỗi {username} ạ, em còn trẻ người non dạ mong {username} thông cảm ạ", f"Người ta bảo nghĩ gì thì uốn lưỡi 7 lần trước khi nói, riêng mày, {username}, lưỡi chó nói đéo khác sủa gâu gâu", f"Tổ sư bố thằng {username}, mịe mày lễ phép mày đâu? Dcmm thằng ăn bốc đái ngồi", f"Này, chửi cái đéo gì?? Mày có quyền gì chửi tao, giỏi thì oẳn tù tì thắng tao đi ;). "]
     randNum = random.randrange(0, len(chuibay))
     strings = user_message.lower()
     words = ['dcm', 'đcm', 'con', 'dm', 'dmm', 'dit', 'me', 'ma', 'du', 'đm', 'đmm', 'địt', 'mẹ', 'má', 'đụ', 'banh',
@@ -100,15 +100,25 @@ async def on_message(message):
             dieunhay = random.randrange(1, 6)
             return
 
-    if user_message.lower() == "dam" or user_message.lower() == 'đấm':
-        await message.channel.send("Lá \n tao thắng")
-        return
-    if user_message.lower() == "keo" or user_message.lower() == 'kéo':
-        await message.channel.send("Đấm \n tao thắng")
-        return
-    if user_message.lower() == "la" or user_message.lower() == 'lá':
-        await message.channel.send("Kéo \n tao thắng")
-        return
+    playOanTuTi = random.randrange(1,3)
+    if user_message.lower() == "oan tu ti k" or user_message.lower() == 'oẳn tù tì k' or user_message.lower() == "oan tu ti k banh" or user_message.lower() == 'oẳn tù tì k bảnh' or user_message.lower() == "oan tu ti ko banh" or user_message.lower() == 'oẳn tù tì ko bảnh' or user_message.lower() == "oan tu ti khong banh" or user_message.lower() == 'oẳn tù tì không bảnh':
+        if playOanTuTi == 1:
+            await message.channel.send(f"Chơi luôn em {username} \n Được rồi anh sẽ chơi tập trung hết sức \n Ra đấm, kéo, lá nhé \n Em ra trước đi")
+            if user_message.lower() == "dam" or user_message.lower() == 'đấm':
+                await message.channel.send("Lá \n tao thắng")
+                return
+            if user_message.lower() == "keo" or user_message.lower() == 'kéo':
+                await message.channel.send("Đấm \n tao thắng")
+                return
+            if user_message.lower() == "la" or user_message.lower() == 'lá':
+                await message.channel.send("Kéo \n tao thắng")
+                return
+            playOanTuTi = random.randrange(1, 3)
+        if playOanTuTi == 2:
+            await message.channel.send("Chơi cái đầu buồi 3===>")
+            playOanTuTi = random.randrange(1, 3)
+            return
+
 
 
 client.run(TOKEN)
