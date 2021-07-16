@@ -14,7 +14,7 @@ async def on_ready():
 # the input is every msg in the server
 # func to react/respond to every msg in the server
 @client.event
-async def on_message(message):
+async def on_message(message, acceptPlay=0):
     username = str(message.author).split('#')[0]
     user_message = str(message.content)
     channel = str(message.channel.name)
@@ -104,7 +104,7 @@ async def on_message(message):
             dieunhay = random.randrange(1, 6)
             return
 
-    acceptPlay = 0
+
     playOanTuTi = random.randrange(1, 3)
     if user_message.lower() == "oan tu ti k" or user_message.lower() == 'oẳn tù tì k' or user_message.lower() == "oan tu ti k banh" or user_message.lower() == 'oẳn tù tì k bảnh' or user_message.lower() == "oan tu ti ko banh" or user_message.lower() == 'oẳn tù tì ko bảnh' or user_message.lower() == "oan tu ti khong banh" or user_message.lower() == 'oẳn tù tì không bảnh':
         if playOanTuTi == 1:
@@ -121,12 +121,15 @@ async def on_message(message):
     if acceptPlay == 1:
         if user_message.lower() == "dam" or user_message.lower() == 'đấm':
             await message.channel.send("Lá \n tao thắng")
+            acceptPlay = 0
             return
         if user_message.lower() == "keo" or user_message.lower() == 'kéo':
             await message.channel.send("Đấm \n tao thắng")
+            acceptPlay = 0
             return
         if user_message.lower() == "la" or user_message.lower() == 'lá':
             await message.channel.send("Kéo \n tao thắng")
+            acceptPlay = 0
             return
 
 
