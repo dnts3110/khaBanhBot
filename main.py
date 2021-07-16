@@ -51,14 +51,15 @@ async def on_message(message):
                "Tao biết sống là phải tàn ác, Và phải cảnh giác với những con chó như tụi mày",
                "Bố mài chửi chúng mài 1 câu gọn nhẹ thôi nhớ \n Địt con mẹ, địt cả lò cả họ cả xóm nhà chúng mài ra chứ ngồi đấy làm chi mà rách việc.Bố đã đéo thích nói đến thì thôi, chúng mày lại còn chu cái mỏ như cái mỏ lồn vào làm gì, thích thì phắn mẹ chúng mày hết đi, không bố lại xua con chó cái nhà bố ra cho chúng mày bú lồn thì có mà ngộ độc thực phẩm cả lũ, cả nút đấy nhá..hãm vcl.",
                "Đĩ mẹ mày, bố mày ra tù thì bố mày đập bỏ mẹ mày ;)", "Chửi cái đầu buồi à??? Tao làm gì mày",
-               "Chửi cc, vào tù tao với mày solo đcmmmmmmmmm", "May cho em zai là anh đang ngồi tù nhé ;))",
+               f"May cho em {username} là anh vẫn đang ngồi tù nhé ;))",
                "Sủa nửa đi dcmm con chó", "Dm thằng chưa mọc lông cu",
-               "Tiền rách rán lại vẫn có giá trị, \n Nhân cách thối nát có xịt nước hoa vẫn nặng mùi. \n Sống làm sao cko.người ta nể. \n Chứ đừng để người ta khinh. ;)",
+               "Tiền rách rán lại vẫn có giá trị, \n Nhân cách thối nát có xịt nước hoa vẫn nặng mùi. \n Sống làm sao "
+               "cko.người ta nể. \n Chứ đừng để người ta khinh. ;)",
                "Mồm cứt, dcmm cả làng ơi có thằng bé mồm dính đầy cứt vừa lên tiếng nè",
                "Bố mẹ dạy mày để cứt vào mồm à? Sao toàn sủa ra cứt thế hả thằng chó", "Em zai đợi bố mày ra tù đi <3",
                "Tao là bố mày đấy, dcmm", "Mày ăn cơm hay ăn cứt mà ngu thế?",
                "Tạo hoá thật keo kiệt với bộ não của em zai ;)", "Khổ thân em zai, sinh ra đã đéo có não :(",
-               f"Nhìn {username} cũng giống búp bê đó. \n Nhưng búp bê hình như không não mà chỉ toàn nhựa. \n Mà nhựa cuối cùng cũng chỉ ra bãi đồng nát mà thôi."]
+               f"Nhìn {username} cũng giống búp bê đó. \n Nhưng búp bê hình như không não mà chỉ toàn nhựa. \n Mà nhựa cuối cùng cũng chỉ ra bãi đồng nát mà thôi.", f"Dạ em xin lỗi {username} ạ, em còn trẻ người non dạ mong {username} thông cảm ạ", f"Người ta bảo nghĩ gì thì uốn lưỡi 7 lần trước khi nói, riêng mày, {username}, lưỡi chó nói đéo khác sủa gâu gâu", f"Tổ sư bố thằng {username}, mịe mày lễ phép mày đâu? Dcmm thằng ăn bốc đái ngồi", f"Này, chửi cái đéo gì?? Mày có quyền gì chửi tao, giỏi thì oẳn tù tì thắng tao đi ;). \n Đấm, kéo, lá. Mày ra trước"]
     randNum = random.randrange(0, len(chuibay))
     strings = user_message.lower()
     words = ['dcm', 'đcm', 'con', 'dm', 'dmm', 'dit', 'me', 'ma', 'du', 'đm', 'đmm', 'địt', 'mẹ', 'má', 'đụ', 'banh',
@@ -98,6 +99,16 @@ async def on_message(message):
                 f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
             dieunhay = random.randrange(1, 6)
             return
+
+    if user_message.lower() == "dam" or user_message.lower() == 'đấm':
+        await message.channel.send("Lá \n tao thắng")
+        return
+    if user_message.lower() == "keo" or user_message.lower() == 'kéo':
+        await message.channel.send("Đấm \n tao thắng")
+        return
+    if user_message.lower() == "la" or user_message.lower() == 'lá':
+        await message.channel.send("Kéo \n tao thắng")
+        return
 
 
 client.run(TOKEN)
