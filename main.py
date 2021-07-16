@@ -63,18 +63,19 @@ async def on_message(message):
                f"Nhìn {username} cũng giống búp bê đó. \n Nhưng búp bê hình như không não mà chỉ toàn nhựa. \n Mà nhựa cuối cùng cũng chỉ ra bãi đồng nát mà thôi.",
                f"Dạ em xin lỗi {username} ạ, em còn trẻ người non dạ mong {username} thông cảm ạ",
                f"Người ta bảo nghĩ gì thì uốn lưỡi 7 lần trước khi nói, riêng mày, {username}, lưỡi chó nói đéo khác sủa gâu gâu",
-               f"Tổ sư bố thằng {username}, mịe mày lễ phép mày đâu? Dcmm thằng ăn bốc đái ngồi",
-               f"Này, chửi cái đéo gì?? Mày có quyền gì chửi tao, giỏi thì oẳn tù tì thắng tao đi ;). "]
+               f"Tổ sư bố thằng {username}, mịe mày lễ phép mày đâu? Dcmm thằng ăn bốc đéo ăn đũa",
+               f"Ngô Bá Khá từ lúc lọt từ lồn ra đến nay, mới được tận mắt thấy một thanh niên mặc váy đái ngồi, "
+               f"mồm ngậm cứt {username}"]
     randNum = random.randrange(0, len(chuibay))
     strings = user_message.lower()
-    words = ['dcm', 'đcm', 'con', 'dm', 'dmm', 'dit', 'me', 'ma', 'du', 'đm', 'đmm', 'địt', 'mẹ', 'má', 'đụ', 'banh',
+    words = ['dcm', 'đcm', 'con', 'dm', 'dmm', 'dit', 'me', 'ma', 'du', 'đm', 'đmm', 'địt', 'mẹ', 'má', 'đụ', 'long', 'lon', 'lông', 'lồn', 'dcmm', 'đcm', 'banh',
              'bảnh']
     stringlist = strings.split()
-    word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16, word17 = words
+    word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16, word17, word18, word19, word20, word21, word22, word23 = words
     # if (word1 in stringlist and word3 in stringlist) or (word2 in stringlist and word3 in stringlist):
     if (
-            word1 in stringlist or word2 in stringlist or word3 in stringlist or word4 in stringlist or word5 in stringlist or word6 in stringlist or word7 in stringlist or word8 in stringlist or word9 in stringlist or word10 in stringlist or word11 in stringlist or word12 in stringlist or word13 in stringlist or word14 in stringlist or word15 in stringlist) and (
-            word16 in stringlist or word17 in stringlist):
+            word1 in stringlist or word2 in stringlist or word3 in stringlist or word4 in stringlist or word5 in stringlist or word6 in stringlist or word7 in stringlist or word8 in stringlist or word9 in stringlist or word10 in stringlist or word11 in stringlist or word12 in stringlist or word13 in stringlist or word14 in stringlist or word15 in stringlist or word16 in stringlist or word17 in stringlist or word18 in stringlist or word19 in stringlist or word20 in stringlist or word21 in stringlist) and (
+            word22 in stringlist or word23 in stringlist):
         print(True)
         await message.channel.send((chuibay[randNum]))
         randNum = random.randrange(0, len(chuibay))  # make the number random again
@@ -104,54 +105,6 @@ async def on_message(message):
                 f'Nhảy nhảy múa múa cái địt con bà già mày à {username} ??! Địt mịe mày bố mày ngồi tù gọt khoai tây trầm cảm vãi loz bảo bố mày nhảy cái đầu buồi. Đợi bố mày 9 năm nữa ra khỏi tù rồi bố mày nhảy địt mẹ mày ;)')
             dieunhay = random.randrange(1, 6)
             return
-
-
-#   if user_message.lower() == "oan tu ti k" or user_message.lower() == 'oẳn tù tì k' or user_message.lower() == "oan tu ti k banh" or user_message.lower() == 'oẳn tù tì k bảnh' or user_message.lower() == "oan tu ti ko banh" or user_message.lower() == 'oẳn tù tì ko bảnh' or user_message.lower() == "oan tu ti khong banh" or user_message.lower() == 'oẳn tù tì không bảnh':
-#       playOanTuTi = random.randrange(1, 3)
-#       if playOanTuTi == 1:
-#           await message.channel.send(
-#               f"Chơi luôn em {username} \n Được rồi anh sẽ chơi tập trung hết sức \n Ra đấm, kéo, lá nhé \n Em ra trước đi")
-#           if user_message.lower() == "dam" or user_message.lower() == 'đấm':
-#               await message.channel.send("Lá \n tao thắng")
-#               return
-#           if user_message.lower() == "keo" or user_message.lower() == 'kéo':
-#               await message.channel.send("Đấm \n tao thắng")
-#               return
-#           if user_message.lower() == "la" or user_message.lower() == 'lá':
-#               await message.channel.send("Kéo \n tao thắng")
-#               return
-
-#       if playOanTuTi == 2:
-#           await message.channel.send("Chơi cái đầu buồi 3===>")
-#           return
-        if user_message.lower() == "oan tu ti k":
-            play_oan_tu_ti = random.randint(1, 2)
-            print("in1")
-            if play_oan_tu_ti == 1:
-                await channel.send('choi, đấm kéo lá')
-
-                def ra_dam_bua_la(msg):
-                    return (
-                                   msg.content.lower() == 'dam' or msg.content.lower() == "đấm" or msg.content.lower() == 'la' or msg.content.lower() == "lá" or msg.content.lower() == 'kéo' or msg.content.lower() == "keo") and msg.channel == channel and msg.author == message.author
-
-                try:
-                    m = await client.wait_for('message', check=ra_dam_bua_la, timeout=5.0)
-                except asyncio.TimeoutError:
-                    return await message.channel.send(
-                        'Địt mẹ mày rủ chơi xong đéo thấy đâu? đ hiểu, không chơi nữa cmm')
-
-                if m.content.lower() == "dam" or m.content.lower() == 'đấm':
-                    await message.channel.send("Lá \n tao thắng")
-                    return
-                if m.content.lower() == "keo" or m.content.lower() == 'kéo':
-                    await message.channel.send("Đấm \n tao thắng")
-                    return
-                if m.content.lower() == "la" or m.content.lower() == 'lá':
-                    await message.channel.send("Kéo \n tao thắng")
-                    return
-
-            if play_oan_tu_ti == 2:
-                await channel.send('khong choi')
 
 
 client.run(TOKEN)
