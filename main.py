@@ -77,7 +77,7 @@ async def on_message(message):
     if (
             word1 in stringlist or word2 in stringlist or word3 in stringlist or word4 in stringlist or word5 in stringlist or word6 in stringlist or word7 in stringlist or word8 in stringlist or word9 in stringlist or word10 in stringlist or word11 in stringlist or word12 in stringlist or word13 in stringlist or word14 in stringlist or word15 in stringlist or word16 in stringlist or word17 in stringlist or word18 in stringlist or word19 in stringlist or word20 in stringlist or word21 in stringlist) and (
             word22 in stringlist or word23 in stringlist):
-        await message.channel.send((chuibay[randNum]))
+        await message.channel.send("Con xin lỗi bố Minh đẹp trai ạ, tha cho con được không bố, con là 1 thằng ngu con biết")
         randNum = random.randrange(0, len(chuibay))  # make the number random again
         return
 
