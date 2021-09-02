@@ -36,24 +36,21 @@ async def on_message(message):
         return
 
     if message.channel.name != 'genera':  # allow to respond only in the general channel in the server
-        if user_message.lower() == 'hello banh' or user_message.lower() == 'hello bảnh':
+        if user_message.lower() == 'hello banh':
             await message.channel.send(f" Anh Bảnh chào em {username}!")
             return
         elif user_message.lower() == 'ai la nguoi dut nhat trong nay?' or user_message.lower() == 'ai là người đụt nhất trong này?':
             await message.channel.send(f' Chắc chắn là {username}')
             return
-        elif user_message.lower() == 'ai la nguoi xinh nhat trong nay?' or user_message.lower() == 'ai là người xinh nhất trong này?':
-            await message.channel.send(f' Chắc chắn là Thương')
-            return
         elif user_message.lower() == 'xin so danh de anh banh oi' or user_message.lower() == 'xin số đánh đề anh bảnh ơi' or user_message.lower() == 'xin so danh de banh oi' or user_message.lower() == 'xin số đánh đề bảnh ơi':
-            response = f'Em tin anh đánh con đề này đi {random.randint(10, 99)}'
+            response = f'Em zai tin anh đánh con đề này đi {random.randint(10, 99)}'
             await message.channel.send(response)
             return
         elif user_message.lower() == 'buong' or user_message.lower() == 'bướng':
             await message.channel.send(f'Bướng cc à đmm {username}!')
             return
         elif user_message.lower() == 'cam on banh' or user_message.lower() == 'cảm ơn bảnh':
-            await message.channel.send(f'Không có gì nhé em {username}!')
+            await message.channel.send(f'Không có gì nhé em zai {username}!')
             return
         elif user_message.lower() == "nau an di banh" or user_message.lower() == 'nấu ăn đi bảnh':
             await message.channel.send(file=discord.File('cook.gif'))
@@ -179,7 +176,7 @@ async def on_message(message):
             return user == message.author and str(reaction.emoji) == '\N{Money with Wings}'
 
         try:
-            reaction, user = await client.wait_for('reaction_add', timeout=10.0, check=check)
+            reaction, user = await client.wait_for('reaction_add', timeout=34.0, check=check)
         except asyncio.TimeoutError:
             await channel.send(f'Dcmm {username}, có dăm ba đồng bạc lẻ em zai cũng tiếc, cũng tính toán lâu vcloz \N{Smirking Face}')
         else:
