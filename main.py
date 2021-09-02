@@ -42,7 +42,7 @@ async def on_message(message):
         elif user_message.lower() == 'ai la nguoi dut nhat trong nay?' or user_message.lower() == 'ai là người đụt nhất trong này?':
             await message.channel.send(f' Chắc chắn là {username}')
             return
-        elif user_message.lower() == 'ai la nguoi dut xinh trong nay?' or user_message.lower() == 'ai là người xinh nhất trong này?':
+        elif user_message.lower() == 'ai la nguoi xinh nhat trong nay?' or user_message.lower() == 'ai là người xinh nhất trong này?':
             await message.channel.send(f' Chắc chắn là Thương')
             return
         elif user_message.lower() == 'xin so danh de anh banh oi' or user_message.lower() == 'xin số đánh đề anh bảnh ơi' or user_message.lower() == 'xin so danh de banh oi' or user_message.lower() == 'xin số đánh đề bảnh ơi':
