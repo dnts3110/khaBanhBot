@@ -1,19 +1,10 @@
 import discord
-from discord.ext import commands #music
 import random
 import asyncio
 
-import music #music
-
-cogs = [music]
-
-client = commands.Bot(command_prefix='?', intents = discord.Intents.all())
-
-for i in range(len(cogs)):
-    cogs[i].setup(client)
-
 TOKEN = 'ODYzMDAxMzU2NzYzNzkxMzgw.YOgipQ.r6lzgVupo60bZwapN7hUV1cQ-BQ'
 
+client = discord.Client()
 
 
 
