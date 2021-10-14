@@ -14,7 +14,7 @@ for i in range(len(cogs)):
 
 TOKEN = 'ODYzMDAxMzU2NzYzNzkxMzgw.YOgipQ.r6lzgVupo60bZwapN7hUV1cQ-BQ'
 
-client.run(TOKEN)
+
 
 
 
